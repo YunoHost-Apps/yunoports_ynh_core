@@ -1,0 +1,47 @@
+{
+    "name": "YunoPorts",
+    "id": "yunoports",
+    "packaging_format": 1,
+    "description": {
+        "en": "Tool to display opened ports on YunoHost instances.",
+        "fr": "Outil pour afficher les ports ouverts sur une instance YunoHost."
+    },
+    "version": "1.0",
+    "url": "https://github.com/YunoHost/YunoPorts",
+    "license": "free",
+    "maintainer": {
+		"name": "Maniack Crudelis",
+		"email": "maniackc_dev@crudelis.fr"
+    },
+    "requirements": {
+        "yunohost": ">= 2.7.2"
+    },
+    "multi_instance": false,
+    "services": [
+        "nginx",
+        "php5-fpm"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain name for YunoPorts",
+                    "fr": "Choisissez un nom de domaine pour YunoPorts"
+                },
+                "example": "example.com"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for YunoPorts",
+                    "fr": "Choisissez un chemin pour YunoPorts"
+                },
+                "example": "/example",
+                "default": "/"
+            }
+        ]
+    }
+}
